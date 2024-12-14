@@ -3,12 +3,12 @@ import 'package:practice_1/features/core/data/osm/osm_api.dart';
 import 'package:practice_1/features/core/data/osm/weather_repository_osm.dart';
 import 'package:practice_1/features/core/presentation/app.dart';
 
-const String version = '0.0.1';
-const String url = 'https://api.openweathermap.org';
-const String apiKey = 'f11a8d09666e4acbd56e3ecc1ccbe31b';
+
+const String apiURL = 'http://api.weatherapi.com';
+const String apiKey = 'b19ddde0394c4411878170759241412';
 
 void main(List<String> arguments) {
-  var app = App(WeatherRepositoryDebug());
+  var app = App(WeatherRepositoryOSM(OSMApi(apiURL, apiKey)));
 
   app.run();
 }

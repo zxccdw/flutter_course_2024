@@ -1,6 +1,6 @@
 class SearchResponse {
   final int temp;
-  final WeatherType type;
+  final String type;
 
   const SearchResponse(this.temp, this.type);
 
@@ -9,5 +9,3 @@ class SearchResponse {
     return 'SearchResponse{temp: $temp, type: $type}';
   }
 }
-
-enum WeatherType {clear, rain, cloudy, other}
