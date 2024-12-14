@@ -14,4 +14,11 @@ class OSMApi {
 
     return OSMWeather(rJson['current']['temp_c'], rJson['current']['condition']['text']);
   }
+
+  Future<OSMWeather> getWeatherByCoodrs(double x, double y) async {
+  var response = await http.get(Uri.parse('$url/v1/current.json?key=$apiKey&q=$x,$y&aqi=yes'));
+  var rJson = jsonDecode(response.body);
+
+  return OSMWeather(rJson['current']['temp_c'], rJson['current']['condition']['text']);
+  }
 }
